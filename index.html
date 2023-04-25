@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Angel García</h1>
+    </header>
+
+    <section id="introduccion">
+      <h2>Sobre mí</h2>
+      <p>Soy un diseñador gráfico y programador web con experiencia en proyectos creativos y de diseño visual. Me apasiona el trabajo de diseño y la creación de experiencias visuales únicas.</p>
+    </section>
+
+    <section id="galeria">
+      <h2>Mis trabajos</h2>
+      <ul>
+        <li>
+          <a href="#proyecto1">
+            <img src="imagen1.jpg" alt="Proyecto 1">
+          </a>
+        </li>
+        <li>
+          <a href="#proyecto2">
+            <img src="imagen2.jpg" alt="Proyecto 2">
+          </a>
+        </li>
+        <li>
+          <a href="#proyecto3">
+            <img src="imagen3.jpg" alt="Proyecto 3">
+          </a>
+        </li>
+      </ul>
+
+      <div class="modal" id="proyecto1">
+        <img src="imagen1.jpg" alt="Proyecto 1">
+        <img src="imagen2.jpg" alt="Proyecto 1">
+        <img src="imagen3.jpg" alt="Proyecto 1">
+      </div>
+
+      <div class="modal" id="proyecto2">
+        <img src="imagen4.jpg" alt="Proyecto 2">
+        <img src="imagen5.jpg" alt="Proyecto 2">
+        <img src="imagen6.jpg" alt="Proyecto 2">
+      </div>
+
+      <div class="modal" id="proyecto3">
+        <img src="imagen7.jpg" alt="Proyecto 3">
+        <img src="imagen8.jpg" alt="Proyecto 3">
+        <img src="imagen9.jpg" alt="Proyecto 3">
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+
+        <input type="submit" value="Enviar">
+      </form>
+    </section>
+
+    <footer>
+      <p>Derechos reservados © 2023</p>
+    </footer>
+  </body>
+  <script>
+    // Obtener los elementos necesarios del DOM
+    const galeria = document.querySelector('#galeria');
+    const imagenes = galeria.querySelectorAll('img');
+    const modal = document.querySelector('.modal');
+    const modalImg = document.querySelector('.modal img');
+    const closeModalBtn = document.querySelector('.modal .close-btn');
+
+    // Función para abrir la ventana modal con la imagen seleccionada
+    function abrirModal(imgSrc) {
+    modal.style.display = 'block';
+    modalImg.src = imgSrc;
+    }
+
+    // Función para cerrar la ventana modal
+    function cerrarModal() {
+    modal.style.display = 'none';
+    }
+
+    // Agregar evento click a cada imagen de la galería
+    imagenes.forEach((imagen) => {
+    imagen.addEventListener('click', (event) => {
+        const imgSrc = event.target.src;
+        abrirModal(imgSrc);
+    });
+    });
+
+    // Agregar evento click al botón de cerrar la ventana modal
+    closeModalBtn.addEventListener('click', cerrarModal);
+
+  </script>
+</html>
