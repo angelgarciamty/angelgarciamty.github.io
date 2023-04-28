@@ -1,33 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-
-header {
-	background-color: #333;
-	color: #fff;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 2rem;
+body, a{
+	font-family: 'Open Sans', sans-serif;
+	color: #777a89;
+	font-size: 90%;
 }
-
+header {
+	background: rgb(227,235,239);
+	background: linear-gradient(48deg, rgba(227,235,239,1) 0%, rgba(255,255,255,1) 100%);
+	color: #fff;
+	padding: 2rem;
+	color:#23213f;
+}
+.contenedor{
+	max-width:960px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+p{
+	line-height: 1.5em;
+}
+h2{
+	color: #23213f;
+}
+button{
+	background-color: #ed5b43;
+	color: #fff;
+	font-weight: 800;
+	padding: 10px 20px;
+	border-radius: 20px;
+	margin-left: 50px;
+	border:0px;
+	cursor: pointer;
+}
 .logo {
 	width: 20%;
-	float: left;
+	margin-right: auto;
 }
 
-nav {
-	width: 80%;
-	float: right;
-}
+nav {}
 
 nav ul {
 	display: flex;
 	list-style: none;
-	margin-top: 1rem;
+	align-items: center;
 }
 
 nav li {
@@ -35,24 +58,25 @@ nav li {
 }
 
 nav a {
-	color: #fff;
+	color: #23213f;
 	text-decoration: none;
+	font-weight: 800;
 }
-
+nav a.activo{
+	color: #ed5b43;
+}
 .intro {
-	text-align: center;
+	text-align: left;
 	margin-top: 4rem;
+	text-transform: uppercase;
 }
 
 .ilustracion {
-	float: left;
 	width: 50%;
 	margin-top: 2rem;
 }
 
 .presentacion {
-	display: flex;
-	flex-wrap: wrap;
 	padding: 2rem;
 }
 
@@ -67,7 +91,6 @@ nav a {
 }
 
 .perfil {
-	width: 35%;
 	margin: 0 2%;
 }
 
@@ -160,7 +183,7 @@ textarea {
   }
   
   footer {
-  background-color: #333;
+  background-color: #ed5b43;
   color: #fff;
   padding: 2rem;
   text-align: center;
@@ -179,4 +202,10 @@ textarea {
   footer a {
   color: #fff;
   text-decoration: none;
-  }  
+  }
+
+  @media (max-width: 750px) {
+	.contenedor{
+		display: block;
+	}
+  }
