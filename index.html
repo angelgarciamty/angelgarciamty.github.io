@@ -1,107 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Mi Portafolio</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-  </head>
-  <body>
-    <header>
-      <h1>Angel García</h1>
-    </header>
+<head>
+	<title>Portafolio de Diseño</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
 
-    <section id="introduccion">
-      <h2>Sobre mí</h2>
-      <p>Soy un diseñador gráfico y programador web con experiencia en proyectos creativos y de diseño visual. Me apasiona el trabajo de diseño y la creación de experiencias visuales únicas.</p>
-    </section>
+	<header>
+		<div class="logo">
+			<img src="logo.png" alt="Logo">
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#">Inicio</a></li>
+				<li><a href="#">Trabajos</a></li>
+				<li><a href="#">Contacto</a></li>
+			</ul>
+		</nav>
+		<div class="intro">
+			<h1>¡Hola! Soy un diseñador creativo</h1>
+			<p>Con una pasión por crear diseños limpios y hermosos.</p>
+		</div>
+		<div class="ilustracion">
+			<img src="ilustracion.png" alt="Ilustración">
+		</div>
+	</header>
 
-    <section id="galeria">
-      <h2>Mis trabajos</h2>
+	<section class="presentacion">
+		<div class="foto">
+			<img src="foto.png" alt="Foto">
+		</div>
+		<div class="perfil">
+			<h2>Perfil profesional</h2>
+			<p>Soy un diseñador gráfico con más de 5 años de experiencia en la creación de diseños únicos e innovadores. Me especializo en diseño de logotipos, diseño de tarjetas de visita y diseño de sitios web.</p>
+		</div>
+		<div class="perfil">
+			<h2>Perfil de programación</h2>
+			<p>Además de ser un diseñador gráfico, también soy un programador experimentado. Tengo experiencia en lenguajes de programación como HTML, CSS, JavaScript, PHP y Python. Esto me permite diseñar sitios web altamente personalizados y funcionales.</p>
+		</div>
+	</section>
+
+	<section class="portafolio">
+		<h2>Trabajos de Diseño</h2>
+		<div class="trabajos">
+			<a href="#img1"><img src="diseno1.png" alt="Diseño 1"></a>
+			<a href="#img2"><img src="diseno2.png" alt="Diseño 2"></a>
+			<a href="#img3"><img src="diseno3.png" alt="Diseño 3"></a>
+		</div>
+		<h2>Trabajos de Programación</h2>
+		<div class="trabajos">
+			<a href="#img4"><img src="programacion1.png" alt="Programación 1"></a>
+			<a href="#img5"><img src="programacion2.png" alt="Programación 2"></a>
+			<a href="#img6"><img src="programacion3.png" alt="Programación 3"></a>
+		</div>
+	</section>
+
+	<div class="modal">
+		<div class="modal-contenido">
+			<a href="#" class="cerrar">X</a>
+			<img src="diseno1.png" alt="Diseño 1" id="img1">
+			<img src="diseno2.png" alt="Diseño 2" id="img2">
+			<img src="diseno3.png" alt="Diseño 3" id="img3">
+			<img src="programacion1.png" alt="Programación 1" id="img4">
+      <img src="programacion2.png" alt="Programación 2" id="img5">
+      <img src="programacion3.png" alt="Programación 3" id="img6">
+    </div>
+  </div>
+  <section class="contacto">
+    <h2>Contacto</h2>
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" required></textarea>
+      <input type="submit" value="Enviar">
+    </form>
+  </section>
+  
+  <footer>
+    <nav>
       <ul>
-        <li>
-          <a href="#proyecto1">
-            <img src="imagen1.jpg" alt="Proyecto 1">
-          </a>
-        </li>
-        <li>
-          <a href="#proyecto2">
-            <img src="imagen2.jpg" alt="Proyecto 2">
-          </a>
-        </li>
-        <li>
-          <a href="#proyecto3">
-            <img src="imagen3.jpg" alt="Proyecto 3">
-          </a>
-        </li>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Trabajos</a></li>
+        <li><a href="#">Contacto</a></li>
       </ul>
-
-      <div class="modal" id="proyecto1">
-        <img src="imagen1.jpg" alt="Proyecto 1">
-        <img src="imagen2.jpg" alt="Proyecto 1">
-        <img src="imagen3.jpg" alt="Proyecto 1">
-      </div>
-
-      <div class="modal" id="proyecto2">
-        <img src="imagen4.jpg" alt="Proyecto 2">
-        <img src="imagen5.jpg" alt="Proyecto 2">
-        <img src="imagen6.jpg" alt="Proyecto 2">
-      </div>
-
-      <div class="modal" id="proyecto3">
-        <img src="imagen7.jpg" alt="Proyecto 3">
-        <img src="imagen8.jpg" alt="Proyecto 3">
-        <img src="imagen9.jpg" alt="Proyecto 3">
-      </div>
-    </section>
-
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <form>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" required></textarea>
-
-        <input type="submit" value="Enviar">
-      </form>
-    </section>
-
-    <footer>
-      <p>Derechos reservados © 2023</p>
-    </footer>
+    </nav>
+  </footer>
   </body>
-  <script>
-    // Obtener los elementos necesarios del DOM
-    const galeria = document.querySelector('#galeria');
-    const imagenes = galeria.querySelectorAll('img');
-    const modal = document.querySelector('.modal');
-    const modalImg = document.querySelector('.modal img');
-    const closeModalBtn = document.querySelector('.modal .close-btn');
-
-    // Función para abrir la ventana modal con la imagen seleccionada
-    function abrirModal(imgSrc) {
-    modal.style.display = 'block';
-    modalImg.src = imgSrc;
-    }
-
-    // Función para cerrar la ventana modal
-    function cerrarModal() {
-    modal.style.display = 'none';
-    }
-
-    // Agregar evento click a cada imagen de la galería
-    imagenes.forEach((imagen) => {
-    imagen.addEventListener('click', (event) => {
-        const imgSrc = event.target.src;
-        abrirModal(imgSrc);
-    });
-    });
-
-    // Agregar evento click al botón de cerrar la ventana modal
-    closeModalBtn.addEventListener('click', cerrarModal);
-
-  </script>
-</html>
+  </html>
