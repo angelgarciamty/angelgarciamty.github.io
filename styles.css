@@ -17,6 +17,14 @@ header {
 	padding: 2rem;
 	color:#23213f;
 }
+.bottom-header{
+	margin: 70px 0px;
+}
+.ilustracion img{
+	width: 450px;
+	height: auto;
+	float: right;
+}
 .contenedor{
 	max-width:960px;
 	margin: auto;
@@ -24,11 +32,33 @@ header {
 	align-items: center;
 	justify-content: space-between;
 }
+.contenedor-wide{
+	max-width:1120px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
 p{
 	line-height: 1.5em;
+	color: #777a89;
+}
+h1{
+	font-size: 4em;
+	width: 360px;
+	line-height: 1em;
+	font-weight: 800;
+}
+h1 span{
+	color:#ed5b43 ;
 }
 h2{
 	color: #23213f;
+	text-transform: uppercase;
+	font-size: 3.5em;
+	font-weight: 800;
+	margin-bottom: 40px;
+	line-height: 0.8em;
 }
 button{
 	background-color: #ed5b43;
@@ -59,15 +89,18 @@ nav li {
 
 nav a {
 	color: #23213f;
-	text-decoration: none;
-	font-weight: 800;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75em;
+    margin-right: 20px;
 }
 nav a.activo{
 	color: #ed5b43;
 }
 .intro {
 	text-align: left;
-	margin-top: 4rem;
 	text-transform: uppercase;
 }
 
@@ -77,7 +110,7 @@ nav a.activo{
 }
 
 .presentacion {
-	padding: 2rem;
+	padding: 5rem 2rem;
 }
 
 .foto {
@@ -111,37 +144,118 @@ nav a.activo{
 	cursor: pointer;
 }
 
-.modal {
-	display: none;
+/* ----- portafolio ------- */
+
+.gallery{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(15rem,1fr));
+	grid-auto-rows: 22rem;
+	grid-gap: 1rem;
+	width: 100%;
+  }
+  
+  .gallery-item {
+	cursor: pointer;
+	height: 300px;
+	background-color: #777a89;
+	overflow: hidden;
+  }
+  
+  .gallery-item img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+  }
+  
+  .modal {
+	display: flex;
 	position: fixed;
-	z-index: 1;
+	z-index: 999;
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
 	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.9);
-}
-
-.modal-contenido {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	margin-top: 10%;
-}
-
-.modal-contenido img {
-	max-width: 50%;
-	height: auto;
-	margin: 2rem;
-}
-
-.cerrar {
+	background-color: rgba(0, 0, 0, 0.8);
+	opacity: 0;
+  	transition: opacity 0.3s ease-in-out;
+	pointer-events: none;
+  }
+  .modal.show {
+	opacity: 1;
+	pointer-events: auto;
+  }
+  
+  .modal-content {
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+	display: block;
+  }
+  
+  .close {
 	position: absolute;
-	top: 0.5rem;
-	right: 1rem;
-	font-size: 3rem;
+	top: 20px;
+	right: 30px;
+	font-size: 50px;
+	font-weight: bold;
 	color: #fff;
+	cursor: pointer;
+  }
+
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -50px;
+	color: white;
+	font-weight: bold;
+	font-size: 40px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+ 
+/* Estilos para animaciones de fade-in y fade-out */
+.fade-in {
+	animation-name: fade-in;
+	animation-duration: 0.5s;
+}
+
+.fade-out {
+	animation-name: fade-out;
+	animation-duration: 0.5s;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
 }
 
 .contacto {
@@ -190,9 +304,8 @@ textarea {
   }
   
   footer nav ul {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
+	display: flex;
+	justify-content: center;
   }
   
   footer li {
@@ -207,5 +320,26 @@ textarea {
   @media (max-width: 750px) {
 	.contenedor{
 		display: block;
+	}
+	nav ul{
+		justify-content: center;
+	}
+	nav a {
+		margin: 0px;
+	}
+	.curriculum{
+		display: none;
+	}
+	.ilustracion{
+		width: 100%;
+		text-align: center;
+	}
+	.ilustracion img{
+		width: 300px;
+		float: none;
+		margin: auto;
+	}
+	h1{
+		font-size: 2.5em;
 	}
   }

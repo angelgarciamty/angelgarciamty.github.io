@@ -5,10 +5,10 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-
+	
 	<header>
 		<div class="top-header">
-			<div class="contenedor">
+			<div class="contenedor-wide">
 				<div class="logo">
 					<img src="logo.png" alt="Logo">
 				</div>
@@ -29,11 +29,11 @@
 		<div class="bottom-header">
 			<div class="contenedor">
 				<div class="intro">
-					<h1>¡Hola! Soy un diseñador creativo</h1>
-					<p>Con una pasión por crear diseños limpios y hermosos.</p>
+					<h1>LOREM IPSUM DOLOR <span>SIT AMET</span></h1>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
 				</div>
 				<div class="ilustracion">
-					<img src="ilustracion.png" alt="Ilustración">
+					<img src="img/ilustracion.png" alt="Ilustración">
 				</div>
 			</div>
 		</div>
@@ -41,7 +41,7 @@
 
 	<section class="presentacion">
 		<div class="contenedor">
-			<h2>Perfil Profesional</h2>
+			<h2>Perfil<br>Profesional</h2>
 		</div>
 		<div class="contenedor">
 			<div class="foto">
@@ -61,21 +61,39 @@
 			<h2>Portafolio</h2>
 		</div>
 		<div class="contenedor">
-			<div class="trabajos">
-				<a href="#img1"><img src="diseno1.png" alt="Diseño 1"></a>
-				<a href="#img2"><img src="diseno2.png" alt="Diseño 2"></a>
-				<a href="#img3"><img src="diseno3.png" alt="Diseño 3"></a>
+			<div class="gallery">
+				<div>
+				  
+				</div>
+				<div class="gallery-item">
+				  <img src="img/image-2.jpg" alt="Image 2">
+				</div>
+				<div class="gallery-item">
+				  <img src="img/image-3.jpg" alt="Image 3">
+				</div>
+				<div class="gallery-item">
+				  <img src="img/image-4.jpg" alt="Image 4">
+				</div>
+				<div class="gallery-item">
+				  <img src="img/image-5.jpg" alt="Image 5">
+				</div>
+				<div class="gallery-item">
+				  <img src="img/image-6.jpg" alt="Image 6">
+				</div>
+				<div class="gallery-item">
+					<img src="img/image-1.jpg" alt="Image 1">
+				</div>
 			</div>
-			<h2>Trabajos de Programación</h2>
-			<div class="trabajos">
-				<a href="#img4"><img src="programacion1.png" alt="Programación 1"></a>
-				<a href="#img5"><img src="programacion2.png" alt="Programación 2"></a>
-				<a href="#img6"><img src="programacion3.png" alt="Programación 3"></a>
-			</div>
+		</div>
+		<div id="modal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" src="">
+			<a class="prev">&#10094;</a>
+			<a class="next">&#10095;</a>
 		</div>
 	</section>
 
-	<div class="modal">
+	<!--<div class="modal">
 		<div class="modal-contenido">
 			<a href="#" class="cerrar">X</a>
 			<img src="diseno1.png" alt="Diseño 1" id="img1">
@@ -84,7 +102,7 @@
 			<img src="programacion1.png" alt="Programación 1" id="img4">
       <img src="programacion2.png" alt="Programación 2" id="img5">
       <img src="programacion3.png" alt="Programación 3" id="img6">
-    </div>
+    </div>-->
   </div>
   <section class="contacto">
 	<div class="contenedor">
@@ -117,4 +135,105 @@
 	</div>
   </footer>
   </body>
+  <script>
+	const galleryItems = document.querySelectorAll('.gallery-item');
+	var images = document.querySelectorAll('.gallery .gallery-item');
+
+	const modal = document.getElementById('modal');
+	const modalImg = document.querySelector('.modal-content');
+
+	var prevButton = document.getElementsByClassName('prev')[0];
+	var nextButton = document.getElementsByClassName('next')[0];
+
+	// Variable para el índice de la imagen actual
+	var currentImgIndex;
+
+	// Show modal
+	/*function showModal(imgSrc) {
+	modal.style.display = 'block';
+	modalImg.src = imgSrc;
+	}*/
+
+	function showModal(index) {
+		//modal.style.display = 'block';
+		modalImg.src = images[index].children[0].getAttribute("src");
+		currentImgIndex = index;		
+  		modal.classList.add('show');
+	}
+
+	// Hide modal
+	/*function hideModal() {
+	modal.style.display = 'none';
+	modalImg.src = '';
+	}*/
+
+	function hideModal() {
+		//modal.style.display = 'none';
+		modal.classList.remove('show');
+		modalImg.src = '';
+	}
+
+	// Add click event listeners to gallery items
+	/*galleryItems.forEach(item => {
+		const img = item.querySelector('img');
+		const imgSrc = img.getAttribute('src');
+
+		item.addEventListener('click', () => {
+			showModal(imgSrc);
+		});
+	});*/
+
+	// Cambia la imagen actual al hacer clic en el botón siguiente
+	function nextImage() {
+		currentImgIndex++;
+		if (currentImgIndex >= images.length) {
+			currentImgIndex = 0;
+		}
+		modalImg.src = images[currentImgIndex].children[0].getAttribute("src");
+	}
+
+	// Cambia la imagen actual al hacer clic en el botón anterior
+	function prevImage() {
+		currentImgIndex--;
+		if (currentImgIndex < 0) {
+		currentImgIndex = images.length - 1;
+		}
+		modalImg.src = images[currentImgIndex].children[0].getAttribute("src");
+	}
+
+	nextButton.addEventListener('click', function() {
+		nextImage();
+		modalImg.classList.add('fade-in');
+	});
+
+	prevButton.addEventListener('click', function() {
+		prevImage();
+		modalImg.classList.add('fade-in');
+	});
+
+	// Agrega eventos a los elementos
+	images.forEach(function(image, index) {
+		image.addEventListener('click', function() {
+			showModal(index);
+			modal.classList.add('fade-in');
+		});
+	});
+
+	// Close modal when clicking on close button
+	const closeBtn = document.querySelector('.close');
+	closeBtn.addEventListener('click', () => {
+	hideModal();
+	});
+
+	// Close modal when clicking outside of modal content
+	window.addEventListener('click', (e) => {
+	if (e.target === modal) {
+		hideModal();
+	}
+	});
+
+
+	document.getElementsByTagName("body")[0].innerHTML="<h1> Sitio en construcción </h1>";
+
+  </script>
   </html>
