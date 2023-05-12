@@ -6,34 +6,38 @@
 </head>
 <body>
 	
-	<header>
+	<header id="header">
 		<div class="top-header">
 			<div class="contenedor-wide">
 				<div class="logo">
-					<img src="logo.png" alt="Logo">
+					<img class="nombre" src="img/logo_nombre.png" alt="Logo">
+					<img class="icon" src="img/logo_icon.png" alt="">
 				</div>
 				<nav>
 					<ul>
-						<li><a href="#" class="activo">Inicio</a></li>
-						<li><a href="#">Trabajos</a></li>
-						<li><a href="#">Contacto</a></li>
+						<li><a href="#inicio" class="activo">Inicio</a></li>
+						<li><a href="#portafolio">Portafolio</a></li>
+						<li><a href="#contacto">Contacto</a></li>
 					</ul>
 				</nav>
 				<div class="curriculum">
 					<button>
-						Mi curriculum
+						<span>Curriculum</span> 
 					</button>
 				</div>
 			</div>
 		</div>
-		<div class="bottom-header">
+		<div id="bottom-header" class="bottom-header">
 			<div class="contenedor">
 				<div class="intro">
-					<h1>LOREM IPSUM DOLOR <span>SIT AMET</span></h1>
+					<h1>HOLA <span>SIT AMET</span></h1>
 					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
 				</div>
-				<div class="ilustracion">
-					<img src="img/ilustracion.png" alt="Ilustración">
+				<div id="ilustracion" class="ilustracion">
+					<img id="circulos" class="circulos" src="img/circulos.png" alt="">
+					<img id="elementos" class="elementos" src="img/elementos.png" alt="">
+					<img id="celular" class="celular" src="img/celular.png" alt="">
+					<img id="resplandor" class="resplandor" src="img/resplandor.png" alt="">
 				</div>
 			</div>
 		</div>
@@ -56,43 +60,73 @@
 		</div>
 	</section>
 
-	<section class="portafolio">
+	<section id="portafolio" class="portafolio">
 		<div class="contenedor">
 			<h2>Portafolio</h2>
 		</div>
 		<div class="contenedor">
+			
 			<div class="gallery">
 				<div>
-				  
+					<h3>Diseño Gráfico</h3>
 				</div>
 				<div class="gallery-item">
-				  <img src="img/image-2.jpg" alt="Image 2">
+					<div class="gallery-img">
+						<img class="" src="img/newlion.jpg" alt="Image 2">
+					</div>
+					<div class="gallery-description">
+						<h4>Lorem ipsum dolor</h4>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+						<a href="">Link al sitio</a>
+					</div>
 				</div>
 				<div class="gallery-item">
-				  <img src="img/image-3.jpg" alt="Image 3">
+					<div class="gallery-img">
+						<img src="img/besito.jpg" alt="Image 3">
+					</div>
+				  	<div class="gallery-description">
+						<h4>Lorem ipsum dolor</h4>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+						<a href="">Link al sitio</a>
+					</div>
 				</div>
 				<div class="gallery-item">
-				  <img src="img/image-4.jpg" alt="Image 4">
-				</div>
-				<div class="gallery-item">
-				  <img src="img/image-5.jpg" alt="Image 5">
-				</div>
-				<div class="gallery-item">
-				  <img src="img/image-6.jpg" alt="Image 6">
-				</div>
-				<div class="gallery-item">
-					<img src="img/image-1.jpg" alt="Image 1">
+					<div class="gallery-img border">
+						<img src="img/itsummit.jpg" alt="Image 4">
+					</div>
+					<div class="gallery-description">
+						<h4>Lorem ipsum dolor</h4>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+						<a href="">Link al sitio</a>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div id="modal" class="modal">
-			<span class="close">&times;</span>
-			<img class="modal-content" src="">
-			<a class="prev">&#10094;</a>
-			<a class="next">&#10095;</a>
+		<div class="contenedor">
+			<div class="gallery">
+				<div>
+					<h3>Programación y Maquetación Web</h3>
+				</div>
+				<div class="gallery-item">
+					<div class="gallery-img">
+						<img class="horizontal" src="img/interface-1.jpg" alt="Image 2">
+					</div>
+					<div class="gallery-description">
+						<h4>Lorem ipsum dolor</h4>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+						<a href="" target="_blank">Link al sitio</a>
+					</div>
+				</div>
+			</div>
 		</div>
+		
 	</section>
-
+	<div id="modal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" src="">
+		<a class="prev">&#10094;</a>
+		<a class="next">&#10095;</a>
+	</div>
 	<!--<div class="modal">
 		<div class="modal-contenido">
 			<a href="#" class="cerrar">X</a>
@@ -104,12 +138,12 @@
       <img src="programacion3.png" alt="Programación 3" id="img6">
     </div>-->
   </div>
-  <section class="contacto">
+  <section id="contacto" class="contacto">
 	<div class="contenedor">
 		<h2>Contacto</h2>
 	</div>
 	<div class="contenedor">
-		<form>
+		<!--<form>
 			<label for="nombre">Nombre:</label>
 			<input type="text" id="nombre" name="nombre" required>
 			<label for="email">Email:</label>
@@ -117,16 +151,30 @@
 			<label for="mensaje">Mensaje:</label>
 			<textarea id="mensaje" name="mensaje" required></textarea>
 			<input type="submit" value="Enviar">
-		</form>
+		</form>-->
+		<div>
+			<p>
+				Si te gustó mi trabajo y estás interesado en trabajar conmigo, <span>¡no dudes en contactarme!</span>
+				Estoy disponible para proyectos de diseño gráfico, diseño web y programación.
+				Siéntete libre de enviarme un mensaje para que podamos discutir más sobre tu proyecto y cómo puedo ayudarte a hacerlo realidad.
+				¡Espero escuchar de ti pronto!
+			</p>
+			Mandame un correo a <br>
+			<a href="mailto:angelgarciamty@gmail.com">
+			angelgarciamty@gmail.com
+			</a>
+		</div>
+		
+		
 	</div>
   </section>
   <footer>
 	<div class="contenedor">
 		<nav>
 			<ul>
-			  <li><a href="#">Inicio</a></li>
-			  <li><a href="#">Trabajos</a></li>
-			  <li><a href="#">Contacto</a></li>
+			  <li><a href="#inicio">Inicio</a></li>
+			  <li><a href="#portafolio">Trabajos</a></li>
+			  <li><a href="#contacto">Contacto</a></li>
 			</ul>
 		</nav>
 		<div>
@@ -136,8 +184,8 @@
   </footer>
   </body>
   <script>
-	const galleryItems = document.querySelectorAll('.gallery-item');
-	var images = document.querySelectorAll('.gallery .gallery-item');
+	const galleryItems = document.querySelectorAll('.gallery-img');
+	var images = document.querySelectorAll('.gallery .gallery-img');
 
 	const modal = document.getElementById('modal');
 	const modalImg = document.querySelector('.modal-content');
@@ -153,6 +201,13 @@
 	modal.style.display = 'block';
 	modalImg.src = imgSrc;
 	}*/
+
+	const header = document.getElementById("header");
+	const bottomheader=document.getElementById("bottom-header");
+	const windowHeight = window.innerHeight;
+	const bhheight=windowHeight-200;
+	header.style.height = windowHeight+"px";
+	bottomheader.style.height=bhheight+"px";
 
 	function showModal(index) {
 		//modal.style.display = 'block';
@@ -232,8 +287,82 @@
 	}
 	});
 
+	function checkScroll() {
+		var section2 = document.querySelector('.portafolio');
+		var sectionPerfil=document.querySelector('.presentacion');
+		var positionPortafolioFromTop = section2.getBoundingClientRect().top;
+		var positionPerfilFromTop = sectionPerfil.getBoundingClientRect().top;
+		var windowHeight = window.innerHeight;
 
-	document.getElementsByTagName("body")[0].innerHTML="<h1> Sitio en construcción </h1>";
+		// si la posición de la segunda sección en la página es mayor a la altura de la ventana del navegador
+		if (positionPortafolioFromTop - windowHeight <= 0) {
+			section2.style.opacity = '1';
+			section2.style.transform="translateY(0)"
+		}
+		if (positionPerfilFromTop - windowHeight <= -50) {
+			sectionPerfil.style.opacity = '1';
+			sectionPerfil.style.transform="translateY(0)"
+		}
+	}
+
+	// agregar un event listener para detectar el scroll
+	window.addEventListener('scroll', checkScroll);
+
+	// ------------------ animacion de menu ---------------------
+	// Obtener los enlaces del menú de navegación
+	const enlaces = document.querySelectorAll('nav a');
+
+	// Agregar un listener de click a cada enlace
+	enlaces.forEach(enlace => {
+		enlace.addEventListener('click', function(e) {
+			e.preventDefault(); // Evitar comportamiento predeterminado del enlace
+			
+			// Obtener el ID del destino
+			const destino = this.getAttribute('href');
+			
+			// Obtener la posición del destino
+			const posicion = document.querySelector(destino).offsetTop;
+			
+			// Desplazarse suavemente hacia el destino
+		// Utilizar el método scrollTo() para desplazarse suavemente
+			window.scrollTo({
+				top: posicion,
+				behavior: 'smooth'
+			});
+		});
+	});
+
+	// --------------------- paralax --------------------------------
+
+	window.addEventListener('scroll', function() {
+		var scrollPosY = window.pageYOffset;
+		var elemento = document.getElementById('bottom-header');
+		var celular=document.getElementById("celular");
+		var elementos=document.getElementById("elementos");
+
+		var elementoAltura = elemento.offsetHeight;
+		var elementosAltura=elementos.offsetHeight;
+		var velocidad = 200.5;
+		var suavidad = 0.1;
+
+		var posicionFondo = (scrollPosY / elementoAltura) * velocidad;
+		var posicionElementos;
+		if((scrollPosY / elementosAltura) * 180<=123){
+			posicionElementos=(scrollPosY / elementosAltura) * 180;
+		}else{
+			posicionElementos=123;
+		}
+		var posicionCelular=(scrollPosY / elementoAltura) * 100;
+
+		elemento.style.transform = 'translateY(' + posicionFondo + 'px)';
+		elemento.style.transition = 'transform ' + suavidad + 's ease-out';
+
+		celular.style.transform = 'translateY(' + posicionCelular+ 'px)';
+
+		elementos.style.transform='translateY(' + posicionElementos + 'px)';
+	});
+
+	//document.getElementsByTagName("body")[0].innerHTML="<h1> Sitio en construcción </h1>";
 
   </script>
   </html>
