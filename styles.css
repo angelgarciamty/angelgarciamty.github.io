@@ -200,6 +200,7 @@ nav a:hover{
 
 .ilustracion img{
 	height: 460px;
+	width: 590px;
 	right: -100px;
 }
 
@@ -513,12 +514,14 @@ textarea {
 	}
 	.ilustracion{
 		width: 100%;
-		text-align: center;
+		position: relative;
+		left: -50%;
 	}
 	.ilustracion img{
-		width: 300px;
-		float: none;
+		width: 600px;
 		margin: auto;
+		left: 50%;
+		margin-left: -120px;
 	}
 	h1{
 		font-size: 2.5em;
