@@ -18,6 +18,9 @@ a{
 	text-decoration: none;
 	font-weight: 600;
 }
+a, button{
+	cursor: pointer;
+}
 a:hover{
 	text-decoration: underline;
 }
@@ -154,17 +157,27 @@ nav a:hover{
 	border-bottom-width: 3px;
 	text-decoration: none;
 }
-.curriculum button{
+
+.curriculum a{
+	background-color: #ed5b43;
+	padding: 8px 24px;
+	color: #fff;
+	border-radius: 24px;
+	overflow: hidden;
+}
+
+.curriculum a{
 	overflow: hidden;
 	position: relative
 }
-.curriculum button span{
+.curriculum a span{
 	z-index: 1;
 	position: relative;
 }
-.curriculum button::after{
+.curriculum a::after{
 	content: "";
 	position: absolute;
+	border-radius: 24px;
 	left: 0px;
 	top: 0px;
 	width: 0%;
@@ -173,7 +186,7 @@ nav a:hover{
 	z-index: 0;
 	transition: all 0.15s ease-in;
 }
-.curriculum button:hover::after{
+.curriculum a:hover::after{
 	width: 100%;
 }
 
