@@ -298,6 +298,10 @@ nav a:hover{
 	width: 100%;
 	margin-bottom: 100px;
   }
+  .gallery div:first-child{
+	display: flex;
+	align-items: center;
+  }
   
   .gallery-item {
 	cursor: pointer;
@@ -319,6 +323,7 @@ nav a:hover{
 	margin: auto;
 	display: flex;
 	justify-content: center;
+	border-radius: 8px;
 	}
   
   .gallery-item img {
@@ -333,7 +338,8 @@ nav a:hover{
   }
   .gallery-item .gallery-description{
 	text-align: left;
-  }
+	padding: 10px;
+	}
 
   .gallery-item img.horizontal{
 	height: 100%;
