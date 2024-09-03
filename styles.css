@@ -195,6 +195,13 @@ nav a:hover{
 	text-transform: uppercase;
 	margin-top: 101px;
 }
+.intro p{
+	width: 320px;
+  margin-top: 9px;
+  font-size: 1.2em;
+  text-transform: capitalize;
+  text-wrap:pretty
+}
 
 /* ------------ ilustracion ---------------- */
 
