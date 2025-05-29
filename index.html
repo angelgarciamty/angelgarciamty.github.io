@@ -28,16 +28,16 @@
 			</div>
 		</div>
 		<div id="bottom-header" class="bottom-header">
-			<div class="contenedor">
+			<div class="grid-container">
 				<div class="intro">
-					<h1>HOLA <span>SOY</span><br>ANGEL GARCIA</h1>
-					<p>Tengo mas de 13 años de experiencia como Diseñador gráfico y programador web</p>
+					<h1>DISEÑO <span><br><span id="typing-text"></span></span></h1>
+					<h2>Soy Angel García</h2> <p>Tengo más de 13 años transformando ideas en experiencias visuales y sitios web que funcionan.</p>
 				</div>
-				<div id="ilustracion" class="ilustracion">
+				<div id="ilustracion">
 					<img id="circulos" class="circulos" src="img/circulos.png" alt="">
-					<img id="elementos" class="elementos" src="img/elementos.png" alt="">
 					<img id="celular" class="celular" src="img/celular.png" alt="">
-					<img id="resplandor" class="resplandor" src="img/resplandor.png" alt="">
+					<img id="elementos" class="elementos" src="img/elementos.png" alt="">
+					
 				</div>
 			</div>
 		</div>
@@ -60,7 +60,7 @@
 		</div>
 	</section>
 
-	<section id="portafolio" class="portafolio">
+	<section class="portafolio" id="portafolio">
 		<div class="contenedor">
 			<h2>Portafolio</h2>
 		</div>
@@ -295,6 +295,41 @@ document.addEventListener("DOMContentLoaded", function () {
 	// agregar un event listener para detectar el scroll
 	window.addEventListener('scroll', checkScroll);
 
+// Función para la animación parallax
+function animateParallax() {
+	const celular=document.getElementById("celular");
+	const elementos=document.getElementById("elementos");
+	const circulos = document.getElementById("circulos");
+    const windowHeight = window.innerHeight;
+    const scrollPosition = window.scrollY;
+    const triggerPoint = windowHeight * 0.5; // Punto de activación a mitad de la ventana
+    
+    // Calculamos el progreso del scroll
+    const progress = Math.min(scrollPosition / triggerPoint, 1);
+    
+    // Animamos cada elemento con diferentes velocidades
+    /*elements.forEach((element, index) => {
+        const speed = 0.5 + (index * 0.2); // Velocidad diferente para cada elemento
+        const translateY = progress * 100 * speed;
+        const opacity = 1 - progress;
+        
+        element.style.transform = `translateY(${translateY}%) translateX(-50%)`;
+        element.style.opacity = opacity;
+    });*/
+	const speed = 0.5 + (1 * 0.2); // Velocidad diferente para cada elemento
+    const translateY = progress * 50 * speed;
+    const opacity = 1 - (progress*0.8);
+	celular.style.transform =`translateY(${translateY}%)`;
+	celular.style.opacity = opacity;
+	elementos.style.transform =`translateY(-${translateY}%)`;
+	elementos.style.opacity = opacity;
+	//elements[2].style.transform =`translateY(${translateY}%) translateX(-50%)`;
+	circulos.style.opacity = opacity;
+}
+
+// Agregamos el listener de scroll
+window.addEventListener('scroll', animateParallax);
+
 	// ------------------ animacion de menu ---------------------
 	// Obtener los enlaces del menú de navegación
 	const enlaces = document.querySelectorAll('nav a');
@@ -319,9 +354,39 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 
+	const typingText=document.getElementById("typing-text");
+	let text="</CÓDIGO>";
+	let index = 0;
+	let reversa=false;
+	async function typeWriter() {
+		if (!reversa) {
+			typingText.textContent += text.charAt(index);
+			index++;
+			reversa=text.length === index ? true : false;
+			if(reversa){
+				await delay(4000);
+			}else{
+				await setTimeout(typeWriter, 150);
+			}
+		}
+		if(reversa){
+			typingText.textContent = text.substring(0, index);
+			index--;
+			reversa=index===-1 ? false : true;
+			await setTimeout(typeWriter, 150);
+		}
+	}
+	function delay(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	}
+
+	typeWriter();
+
+
+
 	// --------------------- paralax --------------------------------
 
-	window.addEventListener('scroll', function() {
+	/*window.addEventListener('scroll', function() {
 		var scrollPosY = window.pageYOffset;
 		var elemento = document.getElementById('bottom-header');
 		var celular=document.getElementById("celular");
@@ -347,7 +412,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		celular.style.transform = 'translateY(' + posicionCelular+ 'px)';
 
 		elementos.style.transform='translateY(' + posicionElementos + 'px)';
-	});
+	});*/
 
 	//document.getElementsByTagName("body")[0].innerHTML="<h1> Sitio en construcción </h1>";
 

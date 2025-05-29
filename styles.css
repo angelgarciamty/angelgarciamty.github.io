@@ -33,6 +33,31 @@ header {
 	overflow: hidden;
 	box-shadow: inset 0 0 30px #ddd;
 }
+header h2{
+	font-size: 1.8em;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin: 20px 0px;
+    width: fit-content;
+}
+
+#typing-text {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #ed5b43;
+    animation: typing 3s steps(10, end), blink-caret .75s step-end infinite;
+    padding-right: 20px;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #ed5b43 }
+}
 .bottom-header{
 	margin: 0px 0px;
 	display: flex;
@@ -193,7 +218,6 @@ nav a:hover{
 .intro {
 	text-align: left;
 	text-transform: uppercase;
-	margin-top: 101px;
 }
 .intro p{
 	width: 320px;
@@ -205,38 +229,53 @@ nav a:hover{
 
 /* ------------ ilustracion ---------------- */
 
-.ilustracion img{
-	height: 460px;
-	width: 590px;
-	right: -100px;
+.grid-container{
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* dos columnas iguales */
+	gap: 10px; /* espacio entre columnas opcional */
+	width: 960px;
+	margin: 0px auto;
+	height: calc(100vh - 90px);
+	align-items: center;
 }
 
-.circulos{
+#ilustracion img{
+	height: auto;
+	width: 526px;
+	right: 0px;
+}
+
+#circulos,
+#elementos,
+#celular,
+#resplandor {
 	position: absolute;
-	top: 0px;
+
+	opacity: 1;
+}
+
+#circulos {
+	top: 0;
 	z-index: 1;
 }
-.celular{
-	position: absolute;
-	top:-50px;
+
+#elementos,
+#celular,
+#resplandor {
+	top: 0;
 	z-index: 2;
 }
-.elementos{
-	position: absolute;
-	top: -80px;
-	z-index: 3;
-	right: -80px !important;
-}
-.resplandor{
-	position: absolute;
-	top: 0px;
-	z-index: 4;
+
+#elementos{
+	top: 45px;
+	margin-right: 19px;
 }
 
-.ilustracion {
-	width: 550px;
+#ilustracion {
 	position: relative;
 	height: 338px;
+	margin-right: -60px;
+	margin-top:-27px;
 }
 
 .presentacion {
@@ -262,7 +301,7 @@ nav a:hover{
 }
 .foto img{
 	width: 150px;
-	height: 150px;
+	height: auto;
 	background-color: #777a89;
 	border-radius: 50%;
 	display: block;
@@ -291,6 +330,9 @@ nav a:hover{
 	opacity: 0;
 	transform: translateY(100px);
   	transition: all 1s ease-in-out;
+}
+.presentacion .foto img{
+	margin: auto;
 }
 
 /* ----- portafolio ------- */
@@ -494,7 +536,7 @@ textarea {
   footer {
   background-color: #ed5b43;
   color: #fff;
-  padding: 2rem;
+  padding: 5rem;
   text-align: center;
   }
   
@@ -520,6 +562,15 @@ textarea {
 	.contenedor{
 		display: block;
 	}
+	.intro{
+		margin-top: 70px;
+	}
+	#bottom-header{
+		padding-top: 20px;
+	}
+	.grid-container{
+		display: block;
+	}
 	nav ul{
 		justify-content: center;
 	}
@@ -529,25 +580,34 @@ textarea {
 	.curriculum{
 		display: none;
 	}
-	.ilustracion{
-		width: 100%;
+	#ilustracion {
 		position: relative;
-		left: -50%;
-	}
-	.ilustracion img{
-		width: 600px;
-		margin: auto;
-		left: 50%;
-		margin-left: -120px;
-	}
+		height: 338px;
+		margin-right: -60px;
+		margin-top: -27px;
+		width: 100%;
+	  }
+	  #ilustracion img{
+		height: auto;
+  		width: 386px;
+		right: 50%;
+		margin-right: -180px;
+	  }
 	h1{
-		font-size: 2.5em;
+		font-size: 3.7em;
+	}
+	.presentacion .foto{
+		margin: auto;
+		width: 100%;
+	}
+	.presentacion .foto img{
+		margin: auto;
 	}
 	.gallery{
 		display: block;
 	}
 	.gallery-item{
-		margin: 50px 0px;
+		margin: 20px 0px;
 	}
 	.gallery-item .gallery-img{
 		width: 300px;
@@ -560,5 +620,9 @@ textarea {
 	}
 	.logo .nombre{
 		display: none;
+	}
+	.modal-images img{
+		width: 100%;
+		height: auto;
 	}
   }
